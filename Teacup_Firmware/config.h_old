@@ -30,7 +30,9 @@
 
 	If you want to port this to a new chip, start off with arduino.h and see how you go.
 */
-
+#if ! ( defined (__AVR_ATmega1280__) || defined (__AVR_ATmega2560__) )
+	#error RAMPS has 1280/2560! set your cpu type in Makefile!
+#endif
 
 /** \def F_CPU
 	CPU clock rate
